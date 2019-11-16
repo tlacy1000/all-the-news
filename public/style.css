@@ -1,0 +1,26 @@
+body {
+font-family: 'Open Sans', sans-serif;
+font-family: 'Montserrat', sans-serif;
+background-image: url("/img/bg/background.jpg")
+}
+
+/* Header Nav */
+.header-nav {
+    border-top: gray solid 1px;
+    border-bottom: gray solid 1px;
+}
+
+/* Card Changes */
+.card{
+    border-radius: 0px;
+}
+
+.card-btn{
+    background-color: gray;
+    color: white;
+    font-family: 'Libre Baskerville', serif;
+
+}
+a {
+    color: gray;
+}

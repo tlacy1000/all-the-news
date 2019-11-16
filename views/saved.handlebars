@@ -1,0 +1,109 @@
+<div class="jumbotron-fluid text-center">
+    <h1 class="display-2 mt-3">The 538 Scraper</h1>
+    <nav class="navbar navbar-expand-lg navbar-light header-nav">
+        <div class="container">
+            <div class="row justify-content-between">
+                <ul class="col navbar-nav text-center">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/saved">Saved Articles </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <ul class="col navbar-nav text-right">
+                    <li class="nav-item active">
+                        <form action="/scrape" method="GET" class="navbar-form navbar-left">
+                            <a class="btn btn-scrape" id="scrape-btn">
+                                Scrape Articles
+                            </a>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/scrape" method="GET" class="navbar-form navbar-left"></form>
+                        <a class="btn btn-clear">
+                            Clear Articles
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container pt-3 mt-3">
+    <div class="card-columns">
+        {{#each article}}
+        <div class="card" style="width: 18em">
+            <img class="card-img-top" src={{this.image}} alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a class="card-link" href={{this.link}}>{{this.title}}</a>
+                </h5>
+
+                <!-- Button trigger modal -->
+            </div>
+
+            <ul class="list-group list-group-flush">
+
+               
+
+                <a href="#"
+                    class="list-group-item list-group-item list-group-item-action list-group-item-danger text-center delete-article-btn"
+                    data-id-article={{this._id}}><i
+                        class="fas fa-trash-alt"></i></i> Delete Article</a>
+
+
+            </ul>
+        </div>
+
+        <!-- Modal for each saved article-->
+        <div class="modal fade" id="Modal_{{this._id}}" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" data-id-article={{this._id}}>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Notes for
+                            <br><span><strong>{{this.title}}</strong></span>
+                        </h5>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        {{!-- List of comments --}}
+                        <ul class="list-group">
+
+                            {{#each this.note}}
+                            <li class="list-group-item d-flex justify-content-between align-items-center"
+                                id={{this._id}}>
+                                {{body}}
+                                <span data-id-note={{this._id}} class="btn btn-danger delete-note-btn">Delete</span>
+                            </li>
+                            {{/each}}
+                        </ul>
+
+                        {{!-- Add new note input --}}
+                        <div class="form-group mt-2">
+                            <textarea data-id-article={{this._id}} placeholder="Add new note"
+                                class="form-control new-note" id={{this._id}} rows="3"></textarea>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-id-article={{this._id}} class="btn btn-primary save-note-btn">Save
+                            Note</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{/each}}
+    </div>
+</div>
