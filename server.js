@@ -23,7 +23,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // connect to mongodb
-var MONGODB_URI =   "mongodb+srv://cat:catpassword@cluster0-u4pds.mongodb.net/test?retryWrites=true&w=majority/mongoHeadlines" || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI =   "mongodb+srv://cat:catpassword@cluster0-u4pds.mongodb.net/test?retryWrites=true&w=majority"
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
