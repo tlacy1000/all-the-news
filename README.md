@@ -1,6 +1,6 @@
 # all-the-news is a news scraper that displays articles about the current political climate. 
 
-You can check out the heroku deployes site here:
+You can check out the heroku deployed site here: https://all-the-news123.herokuapp.com/
 
 ## Built With
 
