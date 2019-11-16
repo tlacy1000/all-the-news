@@ -41,7 +41,7 @@ module.exports = function(app) {
         }
       });
       // Send a message to the client
-      res.redirect("/");
+      // res.redirect("/");
     });
   });
 
@@ -63,7 +63,7 @@ module.exports = function(app) {
         if (err) {
           res.send(err);
         } else {
-          res.redirect("/");
+          // res.redirect("/");
         }
       }
     );
