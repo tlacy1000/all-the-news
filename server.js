@@ -23,9 +23,8 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // connect to mongodb
-var MONGODB_URI =   "mongodb://all-the-news123.herokuapp.com:27017" || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI =   process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-// process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 
