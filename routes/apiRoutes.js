@@ -69,7 +69,7 @@ module.exports = function(app) {
     );
   });
 
-  Save a note route
+  // Save a note route
   app.post("/api/saved/notes/:id", function(req, res) {
     db.Note.create(req.body)
       .then(function(dbNote) {
