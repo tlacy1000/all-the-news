@@ -1,3 +1,10 @@
+var MONGODB_URI = process.env.MONGODB_URI;
+
+if (!MONGODB_URI) {
+  console.error('Missing MONGODB_URI environment variable.');
+  process.exit(1);
+}
+
 // Require express and mongoose
 var express = require("express");
 var mongoose = require("mongoose");
@@ -22,18 +29,11 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// connect to mongodb
-var MONGODB_URI =  "mongodb+srv://cat:catpassword@cluster0-u4pds.mongodb.net/test?retryWrites=true&w=majority" || "mongodb://localhost/mongoHeadlines";
-
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
-
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
-
-// A GET route for scraping the BBC websit
-
 
 // Start the server
 app.listen(PORT, function() {
