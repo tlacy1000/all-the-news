@@ -17,7 +17,8 @@ module.exports = function(app) {
         result.title = $(element)
           .find(".article-title")
           .children("a")
-          .text();
+          .text()
+          .trim();
         result.link = $(element)
           .children("a")
           .attr("href");
