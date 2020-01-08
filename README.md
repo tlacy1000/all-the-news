@@ -49,10 +49,6 @@ List of features ready and TODOs for future development
 * Ability to save articles for later reading
 * Ability to add a note onto the article
 ​
-To-do list:
-* I
-* Wow improvement to be done 2
-​
 ## Status
 Project is: Finished
 ​
