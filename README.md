@@ -38,8 +38,8 @@ You can check out the heroku deployed site here: https://all-the-news123.herokua
 
 ## Features
 List of features ready and TODOs for future development
-* Ability to save articles for later reading
-* Ability to add a note onto the article
+* Feature: Ability to save articles for later reading
+* To do: Ability to add a note onto the article
 ​
 ## Status
 Project is: Finished
