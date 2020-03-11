@@ -3,7 +3,6 @@ All-the-news
 ​
 ## Table of contents
 * [General info](#general-info)
-* [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Features](#features)
@@ -12,9 +11,6 @@ All-the-news
 ​
 ## General info
 All-the-news is a news scraper that displays articles about the current political climate. 
-​
-## Screenshots
-![Example screenshot](./img/screenshot.png)
 ​
 ## Technologies
 * [Node](https://nodejs.org) 
@@ -40,10 +36,6 @@ npm start
 
 You can check out the heroku deployed site here: https://all-the-news123.herokuapp.com/
 
-## Code Examples
-Show examples of usage:
-`put-your-code-here`
-​
 ## Features
 List of features ready and TODOs for future development
 * Ability to save articles for later reading
